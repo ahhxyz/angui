@@ -1,6 +1,0 @@
-RewriteEngine on
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_FILENAME} !-f 
-RewriteRule ^(.*)$ /index.php/$1
-#-d:如果目录存在就直接访问，不进行RewriteRule
-#-f:如果文件存在就直接访问，不进行RewriteRule
