@@ -1,0 +1,21 @@
+	<div class="head">
+		<label>查找：</label>
+		<select>
+			<option ng-repeat="field in fields">{{field[1]}}</option>
+		</select>
+		<label>值：</label>
+			<input type="text" name="searchVal01" />
+			<label>值：</label><input type="text" />
+			<input ng-init="isBettween" type="checkbox" name="isBettween" ng-checked="isBettween" />{{isBettween}}
+		<label>从服务器：</label>	<input type="checkbox" name="isFromServer" ng-checked />
+	</div>
+
+	<div class="thead">
+		<table>
+			<tbody>
+				<tr>
+					<th ng-repeat="field in fields" ng-click="oBy='{{field[0]}}';rev=!rev" width="{{field[2]}}">{{field[1]}}</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>

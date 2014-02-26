@@ -1,0 +1,27 @@
+  <div class="page">
+    <ul class="numPerPage">
+      <li>
+        每页：
+        <select  ng-init="rows=[50,100,200,1000]">
+          <option ng-repeat="row in rows">row</option>
+        </select>
+        条
+      </li>
+    </ul>   
+  
+    <ul class="pageNum">
+      <li >首页</li>
+      <li >上一页</li>
+      <li >下一页</li>
+      <li >尾页</li>
+      <li>
+    
+        <select   >
+          <option >1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </li>
+    </ul>
+  </div>

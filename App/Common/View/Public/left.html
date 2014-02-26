@@ -1,0 +1,49 @@
+<div  class="according" ng-repeat="menu in menus" ng-init="index=$index" >
+  <!--菜单标题-->
+  <div class="title" >{{menu.name}}   <a href="javascript:;" class="accordingToggle"  ng-click="accordingToggle($index)">
+      <i class="fa fa-chevron-circle-{{accordingStateCode[$index]}}"></i>   </a>
+  </div>
+  <!--END 菜单标题-->
+
+  <!--菜单内容-->
+  <div ng-class="{menu:accordingState[$index]}" ng-show="accordingState[$index]">
+    <div  ng-repeat="item in menu.menu" ng-class="{final:item.isFinal}" ng-init="line=newArray(item.level-1)" ng-hide="item.hide&&item.hide>0" ng-switch on="item.isFinal"    >
+      
+      <!--输出非终极条目-->  
+    
+        <div  ng-if="!item.isFinal"     class="treeIcons" >
+          <div ng-repeat="_ in line" class="line"></div>
+          <div  ng-click="toggleTree(index,$index)"  ng-init="childState=menu.menu[$index+1]"  ng-class="{first_collapsable:$first,expandable:childState['hide']&&childState['hide']>0,collapsable:!childState['hide']||childState['hide']==0}"></div>
+          <div class="folder_collapsable"></div>
+          <!--输出条目的内容及链接-->  
+          
+          <a href="/#{{item.url}}" tab="item" >{{item.name}}</a>
+
+          <!--END 输出条目的内容及链接-->  
+        </div>
+      <!--END 输出非终极条目-->  
+      
+      <!--输出终极条目-->  
+        
+      <div  ng-if="item.isFinal"     class="treeIcons"  >
+            <div ng-repeat="_ in line" class="line"></div>              
+            <div  class="node"></div>
+            <div class="file"></div>
+      <!--输出条目的内容及链接-->  
+
+      <a href="/#{{item.url}}" tab="item" >{{item.name}}</a>
+
+      <!--END 输出条目的内容及链接-->  
+              
+      </div>
+      <!--END 输出终极条目-->  
+
+      
+    </div>
+  </div>
+  <!--END 菜单内容-->
+
+</div>
+<!--每个模块单独进行输出，这样就能实现所需要的隐藏与展示的效果-->
+
+

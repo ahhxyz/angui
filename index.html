@@ -1,0 +1,130 @@
+<!DOCTYPE html >
+<html  ng-app="CIMSer" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="/Themes/font-awesome/css/font-awesome.css" rel="stylesheet" />
+<link id="themes" href="/Themes/Default/Default.css" rel="stylesheet" />
+<script src="/Angularjs/angular-1.2.5.js"></script>
+<script type="text/javascript">
+  var angui = angular.module('CIMSer', [],function(){});
+      //console.log(angui)
+</script>
+<script src="/App/BaseData.js"></script>
+
+<script src="/App/angui.js"></script>
+<title>ErpAdmin--企业资源管理计划</title>
+</head>
+
+<body>
+<div id="layout" ng-controller="global">
+
+  <div id="header">
+  <a id="logo">
+<!--   <img src="/Themes/images/logo.png"  />
+ -->  
+
+  <span style="font-weight:900;">ERP</span><span>admin</span>
+ </a>
+  <ul>
+  <li id="responseInfo"   >{{responseInfo}}<img ng-show="responseInfo.length<=0" src="Themes/images/progressBar_s.gif"></li>
+  <li>欢迎您！×××</li>
+  <li><a href="#/1/1/">登录</a></li>
+  <li><a href="#/"></a></li>
+  <li style="margin-right:20px;"><a href="#/">官方动态</a></li>
+  <li><a href="#/" data-post="/1/2">提醒</a></li>
+  <li><a href="#/">音乐</a></li>
+  <li><a href="#/">计算器</a></li>
+  <li>
+    <div >
+      <a e-page="100" href="javascript:;"  ng-click="openTab(4)">设置</a>
+    </div>
+  </li>
+  <li ng-controller="Themes" style="float:right">
+  <span>主题：</span>
+  <select   ng-change="change(val)" ng-model="val" >
+    <option ng-repeat="theme in themes " value="{{theme.value}}" ng-selected="{{theme.selected}}"  >{{theme.name}}</option>
+  </select>
+  </li>
+  </ul>
+  </div>
+  <div id="main" ng-controller="Main">
+
+    <div id="left" ng-controller="Menu" ng-show="elemState.leftState"   >
+      
+    <!--菜单-->
+ 
+        <div   ng-include="'App/Common/View/Public/left.html'" ></div>
+      
+    <!--END 菜单-->
+
+
+    </div>
+    <div id="middle"  ng-click="toggleLeft()" ng-style="elemState.middleState" >
+      
+      <i class="fa fa-caret-{{icons.left}}"></i>
+    </div>
+    <div id="right"  ng-style="elemState.rightState" >
+      <div id="tabBar"> </div>
+
+      <div>
+        <ul class="tabsContainer">
+          <li ng-class="{tabHead:true,current:tabs.length==0}" >
+            <div class="title"> 
+                    
+              Home<i class="fa fa-home" ></i>
+            </div>
+          </li>
+          <li ng-repeat="tab in tabs" ng-class="{tabHead:true,current:tab.current}" ng-init="index=$index"   >
+            <div class="title" >
+              <a ng-click="showTab($index)" ng-href="/#{{tab.path?tab.path:tab.key}}" >{{tab.name}}</a>
+              <i class="fa {{tab.icon}}" ></i>
+              <span class="fa fa-times close" ng-click="closeTarget('tabs',$index)" ></span>
+            </div>
+            <!--输出tab内容-->
+
+            <!--IF-->
+              <!--以普通形式展示tab内容-->  
+              <div ng-if="!tab.tags" class="tabContent"  ng-show="tab.current"  ng-init="item=tab"    ng-include="tab.tplPath" ></div>
+
+            <!--ELSE-->
+
+              <!--以含有tag的形式输出tab内容-->
+
+              <div  ng-if="tab.tags" class="tabContent" ng-init="item=tab.tags" ng-show="tab.current" >
+              
+                <div class="tagBar"> </div>
+                <div class="tagHeadBottomLine" ng-show="tabs[0]!='undefinded'" ></div>
+                <ul class="tagsContainer">
+                  <li ng-repeat="tag in tab.tags" ng-class="{tagHead:true,current:tag.current}">
+                    <div  class="title"  >
+                      <a    ng-href="/#{{tag.path}}">{{tag.name}}</a>
+                      <i class="fa {{tag.icon}}" ></i>
+
+                    </div>
+                    <div ng-show="tag.current"  ng-include="tag.tplPath" ng-init="tpl=[tab.tpl,tag.tpl]" class="tagContent"></div>
+                  </li>
+                </ul>           
+
+              </div>  
+            <!--END IF-->
+            <!--END 输出tab内容-->
+
+
+            
+          </li>
+
+        </ul>
+      </div>
+  
+  </div>
+  <div class="footer"></div>
+  <div class="dialogs">
+   <div class="dialog dragabble"  >Drag ME</div>
+   <!--显示dialog的内容时和tab的类似，也能以普通和tags两种方式展示-->
+   <div  class="dialog dragabble"  ng-class="dialog" ng-repeat="dialog in dialogs" style="" ng-include="dialog.tpl"></div>
+  </div>
+
+</div>
+<div style="position:fixed;bottom:10px;width:100%;text-align:center;">沪ICP备13036900</div>
+</body>
+</html>

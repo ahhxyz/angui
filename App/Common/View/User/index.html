@@ -1,0 +1,26 @@
+<span style="display:none;" ng-click="dialog(tpl,'post')">dialog</span>
+
+<div class="conent"   >
+	<div ng-init="fields=[['id','ID',100],['yhm','用户名',100],['nich','昵称'],['level','层级'],['status','状态'],['create_time','创建时间']]" ng-include="'App/Common/View/Public/top.html'"></div>
+
+	<div class="tbody">
+		<table>
+			<tbody>
+				<tr ng-repeat="row in item.data| orderBy: oBy : rev" ng-class-odd="'tr-odd'" ng-class-even="'tr-even'" >
+					<td   width="100" >{{row["id"]}}</td>
+					<td   width="100"  >{{row["yhm"]}}</td>
+					<td >{{row["nich"]}}</td>
+					<td >{{row["level"]}}</td>
+					<td >{{row["status"]}}</td>
+					<td >{{row.create_time|date: 'yyyy-MM-dd HH:mm:ss' }}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<div ng-include="'App/Common/View/Public/page.html'" ></div>
+</div>
+
+

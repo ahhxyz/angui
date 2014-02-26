@@ -1,0 +1,78 @@
+      
+      <div id="{{mod.id}}" class="according" ng-repeat="l1 in erpMenus" >
+        <div class="title"   ng-init="l1Index=$index" >{{l1.name}}
+          <a href="javascript:;"class="toggleMenu "  ng-click="accordingSlide(0)">
+          <i class="fa fa-chevron-circle-{{accordingStateCode[0]}}"></i>   
+          </a>
+          </div>
+          
+        <ul  class="tree" ng-show="accordingState[0]" >
+            <li ng-repeat="l2 in l1.items" ng-init="l2Index=$index" >
+              <div class="treeIcons" ng-hide="!l2.name" >            
+                <div  
+                ng-class="{first_collapsable:$first,collapsable:$middle,last_collapsable:$last}" 
+                  ng-click="treeSlide([l1Index,l2Index])" ng-init="parentLast=$last"></div>
+                <div class="folder_collapsable"></div>
+              </div>
+
+              <a   ng-hide="!l2.name" >{{l2.name}}</a>
+              
+              <ul>
+                <li ng-repeat="l3 in l2.items" >
+                  <div class="treeIcons" ng-hide="!l3.name" > 
+                    <div ng-class="{line:!parentLast,hideTreeLine:parentLast}" ></div>
+           
+                    <div   ng-class="{first_collapsable:$first,collapsable:$middle,last_collapsable:$last}"   ng-click="treeSlide([l1Index,l2Index])" ></div>
+                    <div class="folder_collapsable"></div>
+                  </div>
+
+                  
+
+<!--                   <a ng-href="/#/{{l3.path}}?l1={{l1Index}}&l2={{l2Index}}&l3={{$index}}" ng-click="routerTo(e)">
+ -->                  
+                  <a   ng-hide="!l3.name" >{{l3.name}}</a>
+
+                        <ul   ng-show="accordingState[$index]" >
+                          <li ng-repeat="l4 in l3.items" ng-init="l4Index=$index" class="final" >
+                            <div class="treeIcons">
+                              <div ng-class="{line:!parentLast,hideTreeLine:parentLast}" ></div>
+                              <div ng-class="{last_node:parentLast&&$last,node:!(parentLast&&$last)}"></div>
+                              <div class="file"></div>
+                            </div>  
+
+
+
+                            <a ng-href="/#/{{l1Index}}/{{l2Index}}/{{l3Index}}{{$index}}{{l3.items[0]['uri']}}" >{{l4.name}}</a>
+
+                          </li>
+                        </ul>  
+
+                  <!--title={{l3.name}}&target={{l3.target}}-->
+                </li>
+              </ul>  
+            </li>
+        </ul>
+
+
+
+        <div class="title"    > MES--制造执行系统
+          <a href="javascript:;"class="toggleMenu "  ng-click="accordingSlide(2)">
+          <i class="fa fa-chevron-circle-{{accordingStateCode[2]}}"></i>   
+          </a>
+          </div>
+          
+
+                        <ul   ng-show="accordingState[2]" >
+                          <li ng-repeat="mes in mesMenus"  class="final" >
+                            <div class="treeIcons">
+                              <div ng-class="{line:!parentLast,hideTreeLine:parentLast}" ></div>
+                              <div ng-class="{last_node:parentLast&&$last,node:!(parentLast&&$last)}"></div>
+                              <div class="file"></div>
+                            </div>  
+
+
+
+                            <a ng-href="/#/{{mes.uri}}" >{{mes.name}}</a>
+
+                          </li>
+                        </ul>  

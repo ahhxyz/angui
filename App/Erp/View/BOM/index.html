@@ -1,0 +1,23 @@
+<span style="display:none;" ng-click="dialog(tpl,'post')">dialog</span>
+
+<div class="conent"   >
+	<div ng-init="fields=[['id','物料代码'],['name','物料名称'],['wlz','物料组']]" ng-include="'App/Common/View/Public/top.html'"></div>
+
+	<div class="tbody">
+		<table>
+			<tbody>
+				<tr ng-repeat="row in list[tag.uri]| orderBy: oBy : rev" ng-class-odd="'tr-odd'" ng-class-even="'tr-even'" >
+					<td   >{{row["id"]}}</td>
+					<td   >{{row["name"]}}</td>
+					<td >{{row["wlz"]}}</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+	<div ng-include="'App/Common/View/Public/page.html'" ></div>
+</div>
+
+

@@ -1,0 +1,104 @@
+@charset "utf-8";
+@import url("../angui.css");
+body{/*background:#75E3F0*/     ; font-size:12px; font-family:宋体;}/*#75E3F0*/
+#left,#right{border:none;}
+#left{height: 620px;}
+#right{height:616px;margin-top:12px;}
+select{background-color:#F2F5F8;border-color:#D9E7E9;}
+table,th,td{border-color: #D9E7E9;}
+
+input[type=text]{border-color: #D9E7E9;}
+
+
+
+
+.fa{color: #00BFFF}
+.fa.close{color: #00BFFF}
+.combox{border-color:#00BFFF; background-color: #75E3F0;}
+
+.first_collapsable{background-position:-890px -256px }
+.last_collapsable{background-position:-890px -356px }
+.folder_collapsable{background-position:-602px -318px }
+.folder_expandable{background-position:-602px -268px }
+.line{background-position:-890px -406px }
+.node{background-position:-890px -456px }
+.last_node{background-position:-890px -506px }
+.file{background-position:-602px -248px }
+.line,.node,.file{cursor:default;}
+
+#header{
+	height: 30px;border-bottom: #F2F5F8 solid 2px;
+/*
+background: rgba(69,181,218,1);
+background: -moz-linear-gradient(top, rgba(69,181,218,1) 0%, rgba(3,130,173,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(69,181,218,1)), color-stop(100%, rgba(3,130,173,1)));
+background: -webkit-linear-gradient(top, rgba(69,181,218,1) 0%, rgba(3,130,173,1) 100%);
+background: -o-linear-gradient(top, rgba(69,181,218,1) 0%, rgba(3,130,173,1) 100%);
+background: -ms-linear-gradient(top, rgba(69,181,218,1) 0%, rgba(3,130,173,1) 100%);
+background: linear-gradient(to bottom, rgba(69,181,218,1) 0%, rgba(3,130,173,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45B5DA', endColorstr='#0382AD', GradientType=0 );
+height: 60px;
+*/
+}
+
+.tagContent .thead{		background:#00BFFF ;}
+#left .title{width:176px;height: 40px;line-height: 40px;    /*选择器写法必须和angui.css中一样才能覆盖其中的样式*/
+padding: 4px 8px;margin: 2px 0 4px 4px;}
+#left .title{
+background-color: #F9F9F9;
+border: 1px solid #CCC;
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);}
+.according .final:hover{background-color: #00BFFF;}
+.according .menu{height: 336px;margin-top: 10px;}
+
+/*
+ *右侧tab的样式
+ */
+/*.tabHeaders,.tagHeaders{border-color: #00BFFF;}
+*/
+#tabBar{background-color: #F2F5F8;height: 40px;}
+.tagBar{}
+.tagsContainer{border: none;}
+.tagBar,.tabHeaders ul,.tabsContainer li.tabHead,.tagHeaders ul,.tagsContainer li.tagHead,.tagsContainer{border-color:#00BFFF;}
+.tabsContainer li.tabHead>.title{height: 40px;line-height:40px; background-color:#EAF2F3;border: none;margin: 0 8px 0 0px;padding: 0 10px 0 10px}
+.tagsContainer li.tagHead>.title {height: 20px;border: none;padding: 0 10px 0 10px;background-color: #FFFFFF}
+.tabsContainer li.tabHead.current>.title{height: 36px;top:0px;border-bottom:#00BFFF solid 4px;}
+.tagsContainer li.tagHead.current{height: 20px;margin-top: 5px;border-style:solid solid none solid;border-width: 1px;}
+
+.tabsContainer li.tabHead.current div.title a,.tagsContainer li.tagHead.current  div.title a{/*background-color:#FFF;*/color: #0A54AC}
+.tagsContainer li.tagHead{margin-top: 6px;}
+.tagHeadBottomLine{}
+.tabContent{top:40px;}
+.tabsContainer span.close{right:-12px;top:-14px;}
+
+.dialog{border-color:#00BFFF; background-color: #75E3F0; }
+
+/*
+ *右侧tab下表格的样式
+ */
+.tabContent .thead{background-color: #EAF2F3;}
+.tabContent .tbody {height: 520px;}
+
+.tabContent tr.tr-even{background-color: #F2F6F7;}
+.tabContent .head{background-color: #EAF2F3;}
+.tabContent .page{background-color: #EAF2F3}
+.page ul li{border-color:#D9E7E9; }
+
+/*#layout .main  .splitLine{
+	background:      -ms-linear-gradient(left,#B3EDF0 ,#00BFFF ,#B3EDF0  );/*IE
+	background:     -moz-linear-gradient(left,#B3EDF0 ,#00BFFF ,#B3EDF0  );/*Mozilla
+    background:  -Webkit-linear-gradient(left,#B3EDF0 ,#00BFFF ,#B3EDF0  );/*new gradient for Webkit
+    background:       -o-linear-gradient(left,#B3EDF0 ,#00BFFF ,#B3EDF0  ); /*Opera11
+}
+*/
+
+
+
+
+
+
+
+
+

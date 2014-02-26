@@ -1,0 +1,50 @@
+<!DOCTYPE html >
+<html  ng-app="Application" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link ng-href="themes/Lavender/Lavender.css" rel="stylesheet" />
+<script src="angular.js"></script>
+
+<script src="uidea.js"></script>
+<title>Angui富客户端框架</title>
+</head>
+
+<body>
+<div id="layout">
+  <div class="header">
+  <a class="logo"><img src="themes/Img/logo.png"  /></a>
+  <ul>
+  <li><a ui-view href="#/">设置</a></li>
+  <li>主题：
+  <select  onchange="changeThemes(this.value)">
+  <option value="pink_01">主题一：粉色</option>
+  <option value="Blue">默认：蓝色</option>
+  <option value="DeepBlue">默认：深蓝</option>
+  <option value="Green">默认：绿色</option>
+  <option value="LightGreen">默认：浅绿</option>
+  <option value="Orange">默认：橙色</option>
+  <option value="LightTan">默认：浅棕色</option>
+  <option value="Violet">默认：紫色</option>
+  <option value="Gray">默认：灰色</option>
+  <option value="Lavender">默认：薰衣草</option>
+  <option value="Pink">默认：淡粉色</option>
+  <option value="WhiteSmoke">默认：烟</option>
+
+
+  </select>
+  </li>
+  </ul>
+  </div>
+  <div class="main">
+    <div class="left">
+      <div ng-include="'Views/menu_erp.html'"></div>
+      <div ng-include="'Views/menu_mes.html'"></div>
+      <div ng-include="'Views/menu_oa.html'"></div>
+    </div>
+    <div class="right"></div>
+  
+  </div>
+  <div class="footer"></div>
+</div>
+</body>
+</html>
