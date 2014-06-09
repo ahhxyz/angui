@@ -448,10 +448,13 @@ angui.controller("Themes",function($scope,$element,cookiesDo){
 		var end=href.lastIndexOf('.');
 		css.href=href.replace(href.substring(start,end),val+'/'+val);
 	}
-	var ck=cookiesDo.get();
-	if(typeof(ck["cimser_theme"])!="undefined"){
+	
+        var ck=cookiesDo.get();
+        console.log(Boolean(ck));
+	if(ck&&ck["cimser_theme"]){
 		$scope.change(ck["cimser_theme"]);
 	};
+	
 })
 
 angui.controller('Main',function($scope,$element,arrayDo){
