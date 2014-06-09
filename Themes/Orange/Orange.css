@@ -2,7 +2,7 @@
 @import url("../angui.css");
 body{background:#FFCC00     ; font-size:12px; font-family:宋体;}/*#3ed4e5*/
 .accordion{}
-#left,#right{border-color:#FF8C00; background-color:#FFF0F5;height: 640px;}
+#left,#right{border-color:#FF8C00; background-color:#FFF0F5;height: 590px;}
 select{background-color:#FFA500;border-color:#F0E71B;}
 input[type=text]{border-color:#FFA500;}
 table,th,td{border-color: #DFDDBE}

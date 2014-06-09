@@ -34,13 +34,13 @@ th{cursor: col-resize;}
 #left,#right{position:absolute;border-width:1px;border-style:solid;}
 #left{width:200px;overflow: hidden;margin:10px 0 0 6px;}
 .according {overflow-y:auto; }
-.according .menu{height: 516px; overflow-y:auto; }
+.according .menu{height: 466px; overflow-y:auto; }
 .according a i{margin-right: 6px;}
 .treeIcons{line-height: 22px;display: inline;padding-left: 10px;}
 .treeIcons div{float: left;}
 .according ul li ul li{}
 
-#right{left:214px;width:83%;margin:10px 0 0 0px;}
+#right{left:214px;width:84%;margin:10px 0 0 0px;}
 
 #tabBar,.tagBar{width: 100%;position: absolute;}
 .tagBar{height: 23px;top:4px;border-style: none none solid none;border-width:1px;}
